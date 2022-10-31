@@ -1,0 +1,108 @@
+/* Import Boostrap Scss */
+@import "~bootswatch/dist/zephyr/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/zephyr/bootswatch";
+
+.img-gray-scale {
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(1);
+    /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1);
+    /* Microsoft Edge and Firefox 35+ */
+}
+
+.icon-shape {
+    width: 4.25rem;
+    height: 4.25rem;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-shape:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.card-gradient {
+    background-position: 50%;
+    background-size: cover;
+    background: rgb(100, 176, 209);
+    background: -moz-linear-gradient(90deg, $info 0%, $secondary 50%, $primary 100%);
+    background: -webkit-linear-gradient(90deg, $info 0%, $secondary 50%, $primary 100%);
+    background: linear-gradient(90deg, $info 0%, $secondary 50%, $primary 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#64b0d1", endColorstr="#1a527a", GradientType=1);
+    border: none;
+    position: relative;
+}
+
+.card-gradient * {
+    color: #fff;
+}
+
+.card-gradient .card-number {
+    word-spacing: 10px;
+    font-weight: 600;
+    margin-bottom: 45px;
+    font-size: 20px;
+}
+
+.card-hover:hover {
+    content: "";
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    /* if the element below needs to be clickable */
+}
+
+.text-truncate {
+    --line-clamp: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    word-break: var(--word-break, 'none');
+    overflow: hidden;
+    hyphens: auto;
+    // Automatically use "word-break: break-all" for single-lines
+    // (https://css-tricks.com/css-switch-case-conditions)
+    --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+    --delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+    animation: states 1s var(--delay) paused;
+    white-space: inherit !important;
+    max-width: 20rem;
+
+    @keyframes states {
+        0% {
+            word-break: break-all;
+        }
+    }
+}
+.title-truncate {
+    @media screen and (max-width: 768px) {
+        --line-clamp: 1;
+    }
+
+    --line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    word-break: var(--word-break, 'none');
+    overflow: hidden;
+    hyphens: auto;
+    // Automatically use "word-break: break-all" for single-lines
+    // (https://css-tricks.com/css-switch-case-conditions)
+    --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+    --delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+    animation: states 1s var(--delay) paused;
+    white-space: inherit !important;
+    max-width: 20rem;
+
+    @keyframes states {
+        0% {
+            word-break: break-all;
+        }
+    }
+}
