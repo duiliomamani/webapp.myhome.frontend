@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
-import ButtonLogin from '../../shared/login/login';
+import LoginButton from '../../shared/auth0/login';
 
 /* Files */
 import logo from '../../../assets/images/logo-principal.png';
@@ -39,7 +39,7 @@ const Header = () => {
                     </Nav>
                 </Navbar.Collapse>
                 <Nav className="float-end">
-                    <ButtonLogin title="My Home - Portal " icon={["fas", "house-laptop"]}></ButtonLogin>
+                    <LoginButton title="My Home - Portal " icon={["fas", "house-laptop"]}></LoginButton>
                 </Nav>
             </Container>
         </Navbar>

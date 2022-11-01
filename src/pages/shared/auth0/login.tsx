@@ -10,10 +10,10 @@ interface Props {
     className?: string,
 }
 
-const ButtonLogin: FC<Props> = ({title, icon, className}) : ReactElement => {
+const LoginButton: FC<Props> = ({title, icon, className}) : ReactElement => {
   const { loginWithRedirect } = useAuth0();
 
   return <Button type="button" variant="primary" className={className} onClick={() => loginWithRedirect()}><FontAwesomeIcon icon={icon} /> {title}</Button>;
 };
 
-export default ButtonLogin;
+export default LoginButton;

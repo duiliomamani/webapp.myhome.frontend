@@ -15,21 +15,21 @@ const services: any = [{
 {
     link: '#',
     title: 'Administración segura',
-    description: 'Seguridad y monitoreo digital en vivo',
+    description: 'Seguridad y monitoreo digital en vivo incluido boton antipanico',
     icon: 'building-shield',
     color: 'text-danger'
 },
 {
     link: '#',
-    title: 'Comunicaciones centralizadas',
-    description: 'Seguridad y monitoreo digital',
+    title: 'Comunicaciones',
+    description: 'Realizar avisos de vencimientos y notificaciones generales',
     icon: 'bullhorn',
     color: 'text-info'
 },
 {
     link: '#',
-    title: 'Reservas de espacios comunes',
-    description: 'Seguridad y monitoreo digital',
+    title: 'Info de areas comunes',
+    description: 'Acceso a calendario y estado de reservas',
     icon: 'calendar-week',
     color: 'text-warning'
 }];
@@ -37,7 +37,7 @@ const services: any = [{
 const Home = () => {
     return (
         <>
-            <Container key="jumbotron" className="py-5">
+            <Container id="home" key="home" className="py-5">
                 <Row>
                     <Col lg={6} md={8}>
                         <h1 className="display-4 fw-bold">My Home App</h1>
@@ -60,7 +60,7 @@ const Home = () => {
                         (newItem: any, index: number) => {
                             return (
                                 <Col key={`services-${index}`} className="p-4">
-                                    <Card className="border-0 shadow">
+                                    <Card className="border-0 shadow-lg">
                                         <Card.Body>
                                             <div className="icon-shape">
                                                 <FontAwesomeIcon icon={newItem.icon} className={newItem.color} size="3x" />
@@ -75,7 +75,7 @@ const Home = () => {
                     )}
                 </Row>
             </Container>
-            <Container key="admin" className="py-5">
+            <Container id="admin" key="admin" className="py-5">
                 <Row>
                     <Col lg={6} md={8}>
                         <h1 className="display-4 fw-bold">Soy Administración</h1>
@@ -91,7 +91,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container key="neighbours" className="py-5">
+            <Container id="neighbours" key="neighbours" className="py-5">
                 <Row >
                     <Col lg={6} md={4}>
                         <Image fluid src={mobileComputer}></Image>
@@ -106,39 +106,51 @@ const Home = () => {
                         </div>
                     </Col>
                 </Row>
-
+            </Container>
+            <Container id="contact" key="contact" className="py-5">
                 <Row>
                     <h3 className="text-primary py-3">
                         ¿Necesitás ponerte en contacto con nosotr@s?
                     </h3>
                     <Col lg={4} md={4}>
-                        <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["far", "message"]} /> Chat de la app</h3>
-                        <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
-                            Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                        <Card className="border-0 shadow-lg">
+                            <Card.Body>
+                                <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["far", "message"]} /> Chat de la app</h3>
+                                <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
+                                    Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                            </Card.Body>
+                        </Card>
                     </Col>
                     <Col lg={4} md={4}>
-                        <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["fas", "envelope-open-text"]} /> E-Mail</h3>
-                        <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
-                            Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                        <Card className="border-0 shadow-lg">
+                            <Card.Body>
+                                <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["fas", "envelope-open-text"]} /> E-Mail</h3>
+                                <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
+                                    Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                            </Card.Body>
+                        </Card>
                     </Col>
                     <Col lg={4} md={4}>
-                        <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["fas", "at"]} /> Redes Sociales</h3>
-                        <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
-                            Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                        <Card className="border-0 shadow-lg">
+                            <Card.Body>
+                                <h3 className="fw-bold text-primary"> <FontAwesomeIcon icon={["fas", "at"]} /> Redes Sociales</h3>
+                                <p className="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed ac elit urna. Aenean quis mollis ex, eget euismod metus.
+                                    Phasellus condimentum velit eget risus venenatis, a eleifend velit luctus.</p>
+                            </Card.Body>
+                        </Card>
                     </Col>
                 </Row>
             </Container>
-
             <Container key="question" className="py-5">
-                <h3>
-                    <FontAwesomeIcon icon="circle-question" className="mx-2" />
-                    Preguntas Frecuentes
-                </h3>
-                <Card className="border-0 shadow">
+                <Card className="border-0 shadow-lg">
                     <Card.Body>
+                        <h3>
+                            <FontAwesomeIcon icon="circle-question" className="mx-2" />
+                            Preguntas Frecuentes
+                        </h3>
                         <Accordion flush>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>Question Item #1</Accordion.Header>
