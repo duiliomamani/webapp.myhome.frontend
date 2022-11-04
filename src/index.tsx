@@ -1,5 +1,4 @@
-import { SSRProvider } from 'react-bootstrap';
-import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Auth0Provider } from '@auth0/auth0-react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
@@ -12,9 +11,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import App from './App';
-import LogoutButton from './pages/shared/auth0/logout';
 import ErrorPage from './pages/shared/common/error';
-import Onboarding from './pages/shared/onboarding/onboarding';
+import Dashboard from './pages/root/dashboard/dashboard';
 
 library.add(far, fas, fab);
 
@@ -30,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <Onboarding />,
+    element: <Dashboard />,
   }
 ]);
 

@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Container, Image, Nav, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import LogoutButton from "../auth0/logout";
 
 

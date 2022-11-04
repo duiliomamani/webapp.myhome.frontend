@@ -12,8 +12,7 @@ interface Props {
 
 const LogoutButton: FC<Props> = ({ title, icon, className }): ReactElement => {
     const { logout } = useAuth0();
-
-    return <Button type="button" variant="danger" className={className} onClick={() => logout({ returnTo: window.location.origin })}><FontAwesomeIcon icon={icon} /> {title}</Button>;
+    return <Button type="button" size="sm" variant="danger" className={className} onClick={() => logout({ returnTo: window.location.origin })}><FontAwesomeIcon icon={icon} /> {title}</Button>;
 };
 
 export default LogoutButton;

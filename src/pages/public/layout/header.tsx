@@ -27,7 +27,7 @@ const Header = () => {
         </Navbar>
         <Navbar bg="white" expand="sm" className="d-flex flex-wrap shadow">
             <Container fluid>
-                <Navbar.Brand href={`${window.location.origin}`} className="m-4 m-md-0 "><Image src={logo} alt="" fluid className="d-inline-block align-top icon-shape" /></Navbar.Brand>
+                <Navbar.Brand href={`${window.location.origin}`} className="m-4 m-md-0"><Image src={logo} alt="" fluid className="d-inline-block align-top icon-shape" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav" className="justify-content-center">
                     <Nav>

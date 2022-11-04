@@ -3,6 +3,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/zephyr/bootswatch";
 
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 .img-gray-scale {
     filter: gray;
     /* IE6-9 */
@@ -80,6 +84,7 @@
         }
     }
 }
+
 .title-truncate {
     @media screen and (max-width: 768px) {
         --line-clamp: 1;
