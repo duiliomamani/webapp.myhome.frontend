@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "/register",
+    path: "/dashboard",
     element: <Dashboard />,
   }
 ]);

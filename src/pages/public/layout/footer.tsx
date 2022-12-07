@@ -18,7 +18,7 @@ const Footer = () => {
                     </Nav>
                 </Col>
                 <Col md={4}>
-                    <Image src={logo} className="img-gray-scale d-inline-block align-top m-4 m-md-0" />
+                    <Image src={logo} className="img-gray-scale d-inline-block align-top m-4 m-md-0" width="100vh"/>
                 </Col>
                 <Col md={4}>
                     <p className="text-muted">© <Moment format="yyyy" date={Date.now()}></Moment> - MyHome. Todos los derechos reservados</p>

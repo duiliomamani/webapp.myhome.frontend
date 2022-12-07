@@ -12,7 +12,6 @@ interface Props {
 
 const LoginButton: FC<Props> = ({title, icon, className}) : ReactElement => {
   const { loginWithRedirect } = useAuth0();
-
   return <Button type="button" variant="primary" className={className} onClick={() => loginWithRedirect()}><FontAwesomeIcon icon={icon} /> {title}</Button>;
 };
 
