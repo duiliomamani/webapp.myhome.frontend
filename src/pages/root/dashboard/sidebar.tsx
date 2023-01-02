@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Image, Nav, Navbar } from "react-bootstrap";
 import logo from '../../../assets/images/logo-principal.png';
-import LogoutButton from "../../shared/auth0/logout";
+import LogoutButton from "../../shared/auth/logout";
 
 
 const Sidebar = () => {
@@ -15,7 +15,7 @@ const Sidebar = () => {
             <Nav.Link className="fs-6 my-1"><FontAwesomeIcon icon={["fas", "gear"]} size="1x" /> Settings</Nav.Link>
             <Nav.Link className="fs-6 my-1"><FontAwesomeIcon icon={["fas", "folder-open"]} size="1x" /> Reports</Nav.Link>
             <Nav.Item className="align-bottom p-5">
-                <LogoutButton title="Logout" icon={["fas", "door-open"]} />
+                <LogoutButton title="Cerrar sesión" icon={["fas", "door-open"]} />
             </Nav.Item>
         </Nav>
     </Navbar>;

@@ -1,8 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Auth0Provider } from '@auth0/auth0-react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import reportWebVitals from './reportWebVitals';
 
 /* FontAwesome */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -11,8 +11,10 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import App from './App';
-import ErrorPage from './pages/shared/common/error';
 import Dashboard from './pages/root/dashboard/dashboard';
+import Auth0Protected from "./pages/shared/auth/auth.protected";
+import ErrorPage from './pages/shared/common/error';
+import Onboarding from "./pages/shared/onboarding/onboarding";
 
 library.add(far, fas, fab);
 
@@ -27,8 +29,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
+    path: "/signin-auth0",
+    element: <Auth0Protected />,
+    errorElement: <ErrorPage />
+  },
+  {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <Auth0Protected><Dashboard /></Auth0Protected>,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/onboarding",
+    element: <Auth0Protected><Onboarding /></Auth0Protected>,
+    errorElement: <ErrorPage />
   }
 ]);
 
@@ -37,8 +50,7 @@ root.render(
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN ?? ""}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID ?? ""}
-      // audience={`https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/`} 
-      redirectUri={`${window.location.origin}/register`}>
+      redirectUri={`${window.location.origin}/signin-auth0`}>
       <RouterProvider router={router} />
     </Auth0Provider>
   </React.StrictMode>

@@ -1,9 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import { useRouteError } from "react-router-dom";
-import logout from "../auth0/logout";
-
-
 
 const ErrorPage = () => {
     let error: any = useRouteError();
@@ -12,7 +9,6 @@ const ErrorPage = () => {
     const { isAuthenticated } = useAuth0();
 
     const returnTo = (isAuthenticated: boolean) => {
-
         if (!isAuthenticated) {
             window.location.href = "/";
         }

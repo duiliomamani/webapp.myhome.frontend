@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="page-top">
       <Header />
-      <main key="main" className="bg-light">
+      <main key="main" className="bg-white">
         <Home/>
       </main>
       <Footer />

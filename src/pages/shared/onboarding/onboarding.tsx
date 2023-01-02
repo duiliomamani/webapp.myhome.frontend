@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import LogoutButton from "../auth0/logout";
+import LogoutButton from "../auth/logout";
 
 
 const Onboarding = () => {

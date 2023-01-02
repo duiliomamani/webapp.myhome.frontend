@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, CardGroup, Container, ListGroup, Navbar, NavDropdown, Row, Table } from "react-bootstrap";
-import LogoutButton from "../../shared/auth0/logout";
+import LogoutButton from "../../shared/auth/logout";
 import Sidebar from "./sidebar";
 
 import { useAuth0 } from "@auth0/auth0-react";
@@ -13,7 +13,7 @@ const notification = (<><FontAwesomeIcon icon={["fas", "bell"]} size="1x" />
 </>);
 
 const Dashboard = () => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
 
     if(!isAuthenticated){
         return <></>;
@@ -76,7 +76,7 @@ const Dashboard = () => {
                             <NavDropdown.Item href="#action/3.2"><FontAwesomeIcon icon={["fas", "gear"]} /> Settings</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3"><FontAwesomeIcon icon={["fas", "mobile-screen"]} /> Something</NavDropdown.Item>
                             <div className="d-grid gap-2">
-                                <LogoutButton title="Logout" icon={["fas", "door-open"]} />
+                                <LogoutButton title="Cerrar sesión" icon={["fas", "door-open"]} />
                             </div>
                         </NavDropdown>
                     </Container>

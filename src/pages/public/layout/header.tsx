@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
-import LoginButton from '../../shared/auth0/login';
+import LoginButton from '../../shared/auth/login';
 
 /* Files */
 import logo from '../../../assets/images/logo-principal.png';
 
 const Header = () => {
     return <header>
-        <Navbar bg="white" expand="lg" className="d-flex flex-wrap border-bottom">
+        <Navbar bg="light" expand="lg" className="d-flex flex-wrap border-bottom">
             <Container fluid >
                 <Nav className="justify-content-md-start justify-content-center">
                     <Nav.Item>
@@ -25,7 +25,7 @@ const Header = () => {
                 </Nav>
             </Container>
         </Navbar>
-        <Navbar bg="white" expand="sm" className="d-flex flex-wrap shadow">
+        <Navbar bg="light" expand="sm" className="d-flex flex-wrap shadow-lg border-bottom">
             <Container fluid>
                 <Navbar.Brand href={`${window.location.origin}`} className="m-4 m-md-0"><Image src={logo} alt="" fluid className="d-inline-block align-top icon-shape" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
@@ -39,7 +39,7 @@ const Header = () => {
                     </Nav>
                 </Navbar.Collapse>
                 <Nav className="float-end">
-                    <LoginButton title="My Home - Portal " icon={["fas", "house-laptop"]}></LoginButton>
+                    <LoginButton title="Iniciar sesión " icon={["fas", "house-laptop"]}></LoginButton>
                 </Nav>
             </Container>
         </Navbar>

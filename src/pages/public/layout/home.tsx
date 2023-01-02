@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Container, Row, Image, Card, Accordion } from "react-bootstrap";
 
-import mobile from '../../../assets/images/mobile-mockup.png';
-import mobileComputer from '../../../assets/images/mobile-computer-mockup.png';
-import computer from '../../../assets/images/computer-mockup.png';
+import building from '../../../assets/images/building-bg.jpg';
+import administrator from '../../../assets/images/administrator-bg.jpg';
+import client from '../../../assets/images/client-bg.jpg';
 
 const services: any = [{
     link: '#',
@@ -32,6 +32,20 @@ const services: any = [{
     description: 'Acceso a calendario y estado de reservas',
     icon: 'calendar-week',
     color: 'text-warning'
+},
+{
+    link: '#',
+    title: 'Proximamente',
+    description: 'Una nueva funcionalidad esta por venir',
+    icon: 'laptop-code',
+    color: 'text-success'
+},
+{
+    link: '#',
+    title: 'Proximamente',
+    description: 'Una nueva funcionalidad esta por venir',
+    icon: 'laptop-code',
+    color: 'text-success'
 }];
 
 const Home = () => {
@@ -50,23 +64,23 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col lg={6} md={4}>
-                        <Image fluid src={mobile}></Image>
+                        <Image fluid src={building}></Image>
                     </Col>
                 </Row>
             </Container>
-            <Container key="services" className="py-3">
+            <Container key="services" className="p-5 bg-dark" fluid>
                 <Row sm={2} md={4} lg={4} className="justify-content-center">
                     {services.map(
                         (newItem: any, index: number) => {
                             return (
-                                <Col key={`services-${index}`} className="p-4">
-                                    <Card className="border-0 shadow-lg">
-                                        <Card.Body>
+                                <Col key={`services-${index}`} className="mx-3 py-4">
+                                    <Card className="shadow-lg">
+                                        <Card.Body className="text-center">
                                             <div className="icon-shape">
                                                 <FontAwesomeIcon icon={newItem.icon} className={newItem.color} size="3x" />
                                             </div>
-                                            <Card.Title className="text-darkm-0">{newItem.title}</Card.Title>
-                                            <Card.Text className="m-0"><small>{newItem.description}</small></Card.Text>
+                                            <Card.Title className="fs-4 fw-bold">{newItem.title}</Card.Title>
+                                            <Card.Text className="fs-5"><small>{newItem.description}</small></Card.Text>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -87,14 +101,14 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col lg={6} md={4}>
-                        <Image fluid src={computer}></Image>
+                        <Image fluid src={administrator}></Image>
                     </Col>
                 </Row>
             </Container>
             <Container id="neighbours" key="neighbours" className="py-5">
                 <Row >
                     <Col lg={6} md={4}>
-                        <Image fluid src={mobileComputer}></Image>
+                        <Image fluid src={client}></Image>
                     </Col>
                     <Col lg={6} md={8}>
                         <h1 className="display-4 fw-bold">Soy Vecino</h1>
